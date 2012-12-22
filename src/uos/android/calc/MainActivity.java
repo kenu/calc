@@ -17,109 +17,79 @@ public class MainActivity extends Activity {
 		textView = (TextView) findViewById(R.id.textView1);
 		
 		Button button1 = (Button)findViewById(R.id.button1);
-
-		button1.setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View arg0) {
-				checkMode();
-				textView.setText(textView.getText() + "1");
-			}
-		});
 		Button button2 = (Button)findViewById(R.id.button2);
-		
-		button2.setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View arg0) {
-				checkMode();
-				textView.setText(textView.getText() + "2");
-			}
-		});
 		Button button3 = (Button)findViewById(R.id.button3);
-		
-		button3.setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View arg0) {
-				checkMode();
-				textView.setText(textView.getText() + "3");
-			}
-		});
 		Button button4 = (Button)findViewById(R.id.button4);
-		
-		button4.setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View arg0) {
-				checkMode();
-				textView.setText(textView.getText() + "4");
-			}
-		});
 		Button button5 = (Button)findViewById(R.id.button5);
-		
-		button5.setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View arg0) {
-				checkMode();
-				textView.setText(textView.getText() + "5");
-			}
-		});
 		Button button6 = (Button)findViewById(R.id.button6);
-		
-		button6.setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View arg0) {
-				checkMode();
-				textView.setText(textView.getText() + "6");
-			}
-		});
 		Button button7 = (Button)findViewById(R.id.button7);
-		
-		button7.setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View arg0) {
-				checkMode();
-				textView.setText(textView.getText() + "7");
-			}
-		});
 		Button button8 = (Button)findViewById(R.id.button8);
-		
-		button8.setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View arg0) {
-				checkMode();
-				textView.setText(textView.getText() + "8");
-			}
-		});
 		Button button9 = (Button)findViewById(R.id.button9);
-		
-		button9.setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View arg0) {
-				checkMode();
-				textView.setText(textView.getText() + "9");
-			}
-		});
 		Button button0 = (Button)findViewById(R.id.button0);
-		
-		button0.setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View arg0) {
-				checkMode();
-				textView.setText(textView.getText() + "0");
-			}
-		});
 		Button buttonplus = (Button)findViewById(R.id.buttonplus);
-		
-		buttonplus.setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View arg0) {
-				checkMode();
-				textView.setText(textView.getText() + "+");
-			}
-		});
 		Button buttonequal = (Button)findViewById(R.id.buttonequal);
+
+		View.OnClickListener listener = new View.OnClickListener(){
+			@Override
+			public void onClick(View v) {
+				checkMode();
+				String string = "1";
+				switch (v.getId()) {
+				case R.id.button1:
+					string = "1";
+					break;
+				case R.id.button2:
+					string = "2";
+					break;
+				case R.id.button3:
+					string = "3";
+					break;
+				case R.id.button4:
+					string = "4";
+					break;
+				case R.id.button5:
+					string = "5";
+					break;
+				case R.id.button6:
+					string = "6";
+					break;
+				case R.id.button7:
+					string = "7";
+					break;
+				case R.id.button8:
+					string = "8";
+					break;
+				case R.id.button9:
+					string = "9";
+					break;
+				case R.id.button0:
+					string = "0";
+					break;
+				case R.id.buttonplus:
+					string = "+";
+					break;
+
+				default:
+					break;
+				}
+				textView.setText(textView.getText() + string);
+			}
+		};
+		button1.setOnClickListener(listener);
+		button2.setOnClickListener(listener);
+		button3.setOnClickListener(listener);
+		button4.setOnClickListener(listener);
+		button5.setOnClickListener(listener);
+		button6.setOnClickListener(listener);
+		button7.setOnClickListener(listener);
+		button8.setOnClickListener(listener);
+		button9.setOnClickListener(listener);
+		button0.setOnClickListener(listener);
+		buttonplus.setOnClickListener(listener);
 		
 		buttonequal.setOnClickListener(new View.OnClickListener(){
 			@Override
-			public void onClick(View arg0) {
+			public void onClick(View v) {
 				textView.setText(getResult());
 				isStarted = false;
 			}
