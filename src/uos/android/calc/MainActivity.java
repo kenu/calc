@@ -33,45 +33,7 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				checkMode();
-				String string = "1";
-				switch (v.getId()) {
-				case R.id.button1:
-					string = "1";
-					break;
-				case R.id.button2:
-					string = "2";
-					break;
-				case R.id.button3:
-					string = "3";
-					break;
-				case R.id.button4:
-					string = "4";
-					break;
-				case R.id.button5:
-					string = "5";
-					break;
-				case R.id.button6:
-					string = "6";
-					break;
-				case R.id.button7:
-					string = "7";
-					break;
-				case R.id.button8:
-					string = "8";
-					break;
-				case R.id.button9:
-					string = "9";
-					break;
-				case R.id.button0:
-					string = "0";
-					break;
-				case R.id.buttonplus:
-					string = "+";
-					break;
-
-				default:
-					break;
-				}
+				String string = ((Button)v).getText().toString();
 				textView.setText(textView.getText() + string);
 			}
 		};
